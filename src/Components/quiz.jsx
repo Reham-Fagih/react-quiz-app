@@ -1,44 +1,81 @@
 
-function Quiz() { 
+import React, { useState } from "react";
 
-    const qustionsBank = [
-
+function Quiz() {
+    const questionsBank = [
         {
-            qustion: "What is the capital of France?",
+            question: "What is the capital of France?",
             options: ["Paris", "London", "Berlin", "Madrid"],
-            answer: "Paris"
+            answer: "Paris",
         },
         {
-            qustion: "What is the largest planet in our solar system?",
+            question: "What is the largest planet in our solar system?",
             options: ["Jupiter", "Saturn", "Earth", "Mars"],
-            answer: "Jupiter"
+            answer: "Jupiter",
         },
         {
-            qustion: "What is the chemical symbol for gold?",
+            question: "What is the chemical symbol for gold?",
             options: ["Au", "Ag", "Fe", "Hg"],
-            answer: "Au"
-        } 
+            answer: "Au",
+        },
+    ];
 
-    ]
+    const initialAnswers = [null, null, null];
 
-    function handelSelectedOption(options) {
+    const [userAnswers, setUserAnswers] = useState(initialAnswers);
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const selectedAnswer = userAnswers[currentQuestionIndex];
 
+    const currentQuestion = questionsBank[currentQuestionIndex];
+
+    function handleSelectedOption(option) {
+        const updatedAnswers = [...userAnswers];
+        updatedAnswers[currentQuestionIndex] = option;
+        setUserAnswers(updatedAnswers);
     }
-    return <div> 
-        <h2> Q1 </h2>
-        <p className="question">{qustionsBank[0].qustion}</p>
 
-{qustionsBank[0].options.map((options) => (
-    <button className="option" onClick={()=> handelSelectedOption(options)}> {options}</button>
+    function goToPreviousQuestion() {
 
-))}
-    <div className="nav-buttons">
-        <button>Previous</button>
-        <button>Next</button>
-    </div>
+        if(currentQuestionIndex > 0) {
+            setCurrentQuestionIndex(currentQuestionIndex - 1);
+    }
+    }
 
-    </div>
+    function goToNextQuestion() {
+        if(currentQuestionIndex < questionsBank.length - 1) {
+            setCurrentQuestionIndex(currentQuestionIndex + 1);
+        }
+    }
 
+
+    return (
+        <div>
+            <h2>Q{currentQuestionIndex + 1}</h2>
+            <p className="question">{currentQuestion.question}</p>
+
+            {currentQuestion.options.map((option) => (
+                <button
+                    key={option}
+                    className="option"
+                    onClick={() => handleSelectedOption(option)}
+                    style={{
+                        backgroundColor: selectedAnswer === option ? "#d0ebff" : "white",
+                    }}
+                >
+                    {option}
+                </button>
+            ))}
+
+            <div className="nav-buttons">
+                <button onClick={goToPreviousQuestion} disabled={currentQuestionIndex === 0}>
+                    Previous
+                </button>
+                <button onClick={goToNextQuestion} disabled={!selectedAnswer}>
+                    Next
+                </button>
+            </div>
+        </div>
+    );
 }
 
 export default Quiz;
