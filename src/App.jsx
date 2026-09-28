@@ -4,6 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './index.css'
 import Quiz from './Components/quiz.jsx'
+import Results from './Components/Results.jsx'
 
 function App() {
 
