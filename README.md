@@ -16,6 +16,9 @@
 A simple interactive quiz application built with React. Users can answer multiple-choice questions, navigate between questions, and view their final score.
 
 ---
+## Purpose
+
+This project is an ongoing practice project to strengthen my fundamentals in React and apply them through a practical application.
 
 ## Visual Overview
 
@@ -25,12 +28,17 @@ A simple interactive quiz application built with React. Users can answer multipl
 
 ## Features
 
-* Multiple-choice questions
-* Answer selection
-* Previous / Next navigation
-* Score tracking
-* Results screen
-* API integration
+* Fetches quiz questions from an external API
+* Displays multiple-choice questions and answer options
+* Tracks the user's selected answers
+* Provides Previous and Next question navigation
+* Prevents moving forward without selecting an answer
+* Calculates the final score based on correct answers
+* Displays the final quiz results
+* Allows users to restart the quiz
+* Handles loading and error states when fetching questions
+* Dynamically renders questions and answers based on application state
+
 
 ---
 
@@ -46,37 +54,8 @@ A simple interactive quiz application built with React. Users can answer multipl
 
 ---
 
-## React Concepts
 
-* `useState`
-* `useEffect`
-* Props
-* Conditional rendering
-* Event handling
-* List rendering
-* API requests
 
----
 
-## Purpose
 
-This project is an ongoing practice project to strengthen my fundamentals in React and apply them through a practical application.
 
----
-
-## Getting Started
-
-```bash
-npm install
-npm run dev
-```
-
----
-
-## Author
-
-**Reham Fagih**
-
-Software Engineering Graduate | University of Jeddah
-
-<a href="https://linkedin.com/in/Reham-Fagih">LinkedIn</a> • <a href="https://github.com/Reham-Fagih">GitHub</a>
