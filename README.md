@@ -22,7 +22,7 @@ This project is an ongoing practice project to strengthen my fundamentals in Rea
 
 ## Visual Overview
 
-<img src="./Quiz_App.png" width="100%" />
+<img src="First React Project.png" width="100%" />
 
 ---
 
