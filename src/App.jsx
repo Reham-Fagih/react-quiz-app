@@ -1,19 +1,12 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import './index.css'
-import Quiz from './Components/quiz.jsx'
-import Results from './Components/Results.jsx'
+import UserInfo from './Components/UserInfo.jsx'
 
 function App() {
-
   return (
-    <div className="app-container"> 
-     <h1>Quiz App </h1>
-     <Quiz />
+    <div className="app-container">
+      <h1>Quiz App</h1>
+      <UserInfo />
     </div>
-   
   );
 }
 

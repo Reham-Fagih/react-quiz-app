@@ -1,5 +1,5 @@
 
-function Results ({ userAnswers, questionsBank }) {
+function Results({ name, userAnswers, questionsBank }) {
 
     console.log(userAnswers, questionsBank);
 
@@ -17,7 +17,7 @@ function Results ({ userAnswers, questionsBank }) {
 
     return (
         <div>
-            <h2>Quiz completed!</h2>
+            <h2>Quiz completed, {name}!</h2>
             <p> Score {score}/{questionsBank.length} </p>
             <button className="restart-button" onClick={() => window.location.reload()}>
                 Restart Quiz

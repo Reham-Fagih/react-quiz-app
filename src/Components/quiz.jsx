@@ -2,12 +2,13 @@
 import { useEffect, useState } from 'react';
 import Results from './Results';
 
+
 function decodeHtml(value) {
     const document = new DOMParser().parseFromString(value, 'text/html');
     return document.documentElement.textContent;
 }
 
-function Quiz() {
+function Quiz({ name }) {
     const [questions, setQuestions] = useState([]);
     const [userAnswers, setUserAnswers] = useState([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -74,7 +75,7 @@ function Quiz() {
     if (loading) return <p>Loading questions...</p>;
     if (error) return <p role="alert">{error}</p>;
     if (isQuizCompleted) {
-        return <Results userAnswers={userAnswers} questionsBank={questions} />;
+        return <Results name={name} userAnswers={userAnswers} questionsBank={questions} />;
     }
 
     const currentQuestion = questions[currentQuestionIndex];

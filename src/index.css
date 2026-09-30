@@ -6,7 +6,19 @@ body {
   background: #f0f4f8;
   color: #333;
 }
-
+.label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+.input-field {
+  width: 50%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 /* Container styling for the app */
 .app-container {
   max-width: 600px;
